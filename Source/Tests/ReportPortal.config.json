@@ -1,0 +1,17 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/reportportal/agent-net-nunit/master/src/ReportPortal.NUnitExtension/ReportPortal.config.schema",
+    "enabled": true,
+    "server": {
+        "url": "https://reportportal.server/api/v1/",
+        "project": "AutomationExample",
+        "authentication": {
+            "uuid": "3a446d48-4ab3-429f-a299-8ccd4b67eda9"
+        }
+    },
+    "launch": {
+        "name": "AutomationExample",
+        "description": "Some simple",
+        "debugMode": false,
+        "attributes": [ "Regression", "Chrome", "platform:x64" ]
+    }
+}

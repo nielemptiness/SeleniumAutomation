@@ -5,7 +5,7 @@ using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace Core.Base.Elements
 {
-    public class ElementSearchHelper
+    public static class ElementSearchHelper
     {
         private static WebDriverWait wait;
         private static readonly int defWaitTime = 5;
