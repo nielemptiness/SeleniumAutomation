@@ -21,7 +21,7 @@ namespace Tests.Tests
         public void Can_GoToCheckOutPage_WhenAddedALaptopToCart()
         {
             //Act
-            // Implicit variant:
+            // Explicit variant:
             // var mainPage = new Navigation(driver).GoToMainPage();
             // var laptopPage = mainPage.OpenLaptopsSection();
             // var laptops = laptopPage.OpenLaptopSelectionPage();
@@ -29,7 +29,7 @@ namespace Tests.Tests
             // var checkOut = cart.GoToCheckOut();
             // var result = checkOut.IsCheckoutPage();
 
-            //chaining pages variant
+            //chaining variant
             var result = new Navigation(driver)
                 .GoToMainPage()
                 .OpenLaptopsSection()
