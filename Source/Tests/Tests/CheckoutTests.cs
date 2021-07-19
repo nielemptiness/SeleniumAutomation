@@ -9,7 +9,7 @@ using Tests.PageObjects;
 namespace Tests.Tests
 {
     [TestFixture(DRIVERS.ChromeDriver)]
-    [Parallelizable(ParallelScope.Self)]
+    [Parallelizable(ParallelScope.Self | ParallelScope.Children)]
     public class CheckoutTests : BaseTest
     {
         
