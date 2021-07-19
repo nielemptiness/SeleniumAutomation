@@ -24,7 +24,7 @@ namespace Tests.PageObjects
             return new object();
         }
         
-        public LaptopSelectionPage OpenLaptopSection()
+        public LaptopSelectionPage OpenLaptopSelectionPage()
         {
             Section(LaptopSection).Click();
             return new LaptopSelectionPage(_driver);
