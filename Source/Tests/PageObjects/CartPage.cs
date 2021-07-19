@@ -15,8 +15,12 @@ namespace Tests.PageObjects
         private IWebElement ConfirmOrderButton => ElementSearch.FindElement(_driver,
             "//div[@class = 'cart-receipt ng-star-inserted']//a");
 
+        private IWebElement OpenCartButton => ElementSearch.FindElement(_driver,
+            "//li//rz-cart//button");
+
         public CheckOutPage GoToCheckOut()
         {
+            OpenCartButton.Click();
             ConfirmOrderButton.Click();
             return new CheckOutPage(_driver);
         }

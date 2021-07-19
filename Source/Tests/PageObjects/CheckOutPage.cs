@@ -1,4 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using Core.Base.Elements;
+using OpenQA.Selenium;
 
 namespace Tests.PageObjects
 {
@@ -13,9 +16,14 @@ namespace Tests.PageObjects
         
         private static readonly string PageLink = "https://rozetka.com.ua/checkout/";
 
+        private IWebElement PageHeader => ElementSearch.FindNotClickableEl(_driver,
+            "//h1[contains(@class, 'checkout-heading')]");
+
         public bool IsCheckoutPage()
         {
-            return _driver.Url.Equals(PageLink);
+            var header = PageHeader.Displayed;
+            var page = _driver.Url.Equals(PageLink);
+            return page && header;
         }
     }
 }

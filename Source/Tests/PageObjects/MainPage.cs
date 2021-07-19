@@ -13,8 +13,8 @@ namespace Tests.PageObjects
         }
 
         private static readonly string LaptopSection = "Ноутбуки и компьютеры";
-        private IWebElement ProductSection(string productName) => ElementSearch.FindElement(_driver, 
-            $"//ul//li[contains(@class, 'menu-categories__item')]//a[text() = '{productName}']");
+        private IWebElement ProductSection(string productName) => ElementSearch.FindNotClickableEl(_driver, 
+            $"(//ul//li[contains(@class, 'menu-categories__item')]//a[text() = '{productName}'])[2]");
         
 
         public MainPage OpenProductSection(string productName)

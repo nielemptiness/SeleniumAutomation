@@ -37,11 +37,12 @@ namespace Core.Base.Startup
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         }
 
-        public static void SetUpEnvironment(IConfiguration configuration)
+        public static void SetUpEnvironment(IConfiguration configuration, string environment)
         {
             var configSection = configuration.GetSection("Connection");
             var settings = new Config();
             if (configSection.Exists()) configSection.Bind(settings);
+            Config.Environment = environment;
         }
 
         public static void OnClosure()

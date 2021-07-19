@@ -20,12 +20,12 @@ namespace Tests
         [OneTimeSetUp]
         public static void StartApplication()
         {   
-            Start.CreateConfiguration(Args, Service, out _, out var config);
+            Start.CreateConfiguration(Args, Service, out var env, out var config);
             
             try
             {
                 Log.Information("Starting tests...");
-                Start.SetUpEnvironment(config);
+                Start.SetUpEnvironment(config, env);
             }
             catch (Exception ex)
             {
