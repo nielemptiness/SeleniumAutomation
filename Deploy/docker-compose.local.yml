@@ -1,0 +1,16 @@
+﻿version: "3.7"
+
+networks:
+  default:
+    name: autotests-network
+
+services:
+  auto-tests:
+    build:
+      context: ../
+      dockerfile: ./Source/Tests/Dockerfile
+    container_name: autotests
+    hostname: autotests
+    environment:
+      - SELENIUM_HUB=selenium-hub
+      - ASPNETCORE_ENVIRONMENT=test
