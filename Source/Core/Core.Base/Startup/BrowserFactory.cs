@@ -42,6 +42,7 @@ namespace Core.Base.Startup
             chromeOptions.AddArgument("proxy-server='direct://'");
             chromeOptions.AddArgument("proxy-bypass-list=*");
             chromeOptions.AddArgument("disable-extensions");
+            chromeOptions.AddArgument("--disable-dev-shm-usage");
             chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
             chromeOptions.AddUserProfilePreference("download.directory_upgrade", true);
 
@@ -87,7 +88,7 @@ namespace Core.Base.Startup
                         if (Config.Environment != "development")
                         {
                             var address = GetRemoteHub();
-                            var remoteOptions = GetChromeOptions(ifHeadless, ifIncognito); ;
+                            var remoteOptions = GetChromeOptions(ifHeadless, ifIncognito);
                             drivers[DRIVERS.ChromeDriver] = new ThreadLocal<IWebDriver>(() => new RemoteWebDriver(new Uri(address),
                                 remoteOptions));
                         }
