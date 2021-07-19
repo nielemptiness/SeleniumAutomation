@@ -13,8 +13,6 @@ namespace Core.Base.Startup
         #region VARS
         private DRIVERS drivers { get; }
         protected IWebDriver driver;
-        public static bool ifHeadless { get; set; }
-
         #endregion
         
         protected BaseTest(DRIVERS driverType)
@@ -29,7 +27,7 @@ namespace Core.Base.Startup
         {
             try
             {
-                driver = new BrowserFactory().GetDriver(driverToReceive: drivers, ifHeadLess: ifHeadless, ifIncognito: true).Value;
+                driver = new BrowserFactory().GetDriver(driverToReceive: drivers, ifHeadLess: Config.ifHeadless, ifIncognito: true).Value;
             }
             catch (WebDriverException e)
             {
