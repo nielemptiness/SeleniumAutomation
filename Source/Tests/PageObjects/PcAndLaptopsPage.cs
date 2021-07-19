@@ -15,7 +15,7 @@ namespace Tests.PageObjects
         public static readonly string LaptopSection = "Ноутбуки";
 
         private IWebElement Section(string section) => ElementSearch.FindElement(_driver,
-            $"//a//img[@alt = '{section}']");
+            $"//a[@title = '{section}'][contains(@class, 'tile-cats__heading_type_center')]");
 
         //Mocked
         public object OpenSection(string section)
