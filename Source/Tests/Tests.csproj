@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
+        <IsPackable>false</IsPackable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <GenerateProgramFile>false</GenerateProgramFile>
     </PropertyGroup>
@@ -11,6 +11,9 @@
       <PackageReference Include="FluentAssertions" Version="5.10.3" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
       <PackageReference Include="NUnit" Version="3.13.2" />
+      <PackageReference Include="NUnit.Console" Version="3.12.0" />
+      <PackageReference Include="NUnit.ConsoleRunner" Version="3.12.0" />
+      <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
       <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="91.0.4472.10100" />
       <PackageReference Include="Serilog" Version="2.10.0" />
     </ItemGroup>
